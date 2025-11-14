@@ -1,0 +1,224 @@
+/* src/components/admin/Admin.css */
+
+.admin-container {
+    display: flex;
+    min-height: 80vh;
+    max-width: 1400px;
+    /* Rộng hơn cho Admin */
+    margin: 0 auto;
+    padding: 20px;
+    gap: 20px;
+}
+
+.admin-sidebar {
+    width: 250px;
+    /* Độ rộng sidebar */
+    flex-shrink: 0;
+    /* Không co lại */
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    height: fit-content;
+    /* Chiều cao vừa đủ nội dung */
+}
+
+.admin-sidebar h2 {
+    color: #343a40;
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.sidebar-link {
+    display: block;
+    padding: 10px 12px;
+    color: #495057;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s, background-color 0.2s;
+    border-radius: 5px;
+}
+
+/* Style cho NavLink khi active */
+.sidebar-link.active {
+    color: #007bff;
+    background-color: #e9ecef;
+}
+
+.sidebar-link:hover:not(.active) {
+    background-color: #f1f1f1;
+}
+
+.back-link {
+    margin-top: 30px;
+    font-weight: 600;
+    color: #dc3545;
+    /* Màu đỏ */
+}
+
+.back-link:hover {
+    color: #c82333;
+}
+
+.admin-content {
+    flex-grow: 1;
+    /* Chiếm hết phần còn lại */
+    min-width: 0;
+    /* Quan trọng để flexbox hoạt động đúng */
+}
+
+/* --- Style cho Trang Admin (Bảng, Nút) --- */
+.admin-page {
+    padding: 0;
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 10px;
+}
+
+.admin-header h2 {
+    margin: 0;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+    table-layout: fixed;
+    /* Giúp cột tuân thủ độ rộng */
+}
+
+.admin-table th,
+.admin-table td {
+    border: 1px solid #dee2e6;
+    padding: 10px 12px;
+    text-align: left;
+    vertical-align: middle;
+    word-wrap: break-word;
+    /* Tự xuống dòng nếu chữ quá dài */
+}
+
+.admin-table th {
+    background-color: #e9ecef;
+    color: #495057;
+    font-weight: 600;
+}
+
+.admin-table tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.admin-table td img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.admin-table td {
+    font-size: 0.9rem;
+}
+
+/* Định nghĩa độ rộng cột */
+.admin-table th:nth-child(1) {
+    width: 5%;
+}
+
+/* ID */
+.admin-table th:nth-child(2) {
+    width: 8%;
+}
+
+/* Ảnh */
+.admin-table th:nth-child(3) {
+    width: 30%;
+}
+
+/* Tên */
+.admin-table th:nth-child(4) {
+    width: 15%;
+}
+
+/* Giá */
+.admin-table th:nth-child(5) {
+    width: 8%;
+}
+
+/* SL */
+.admin-table th:nth-child(6) {
+    width: 14%;
+}
+
+/* Danh mục */
+.admin-table th:nth-child(7) {
+    width: 20%;
+}
+
+/* Hành động */
+
+
+/* --- Các nút bấm --- */
+.btn-primary,
+.btn-secondary,
+.btn-danger {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+    color: white;
+}
+
+.btn-sm {
+    padding: 5px 8px;
+    font-size: 13px;
+    margin: 0 2px;
+}
+
+.btn-primary {
+    background-color: #0d6efd;
+}
+
+.btn-primary:hover {
+    background-color: #0b5ed7;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+/* Thông báo chung */
+.loading-message,
+.error-message {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1.1rem;
+}
+
+.error-message {
+    color: #dc3545;
+}

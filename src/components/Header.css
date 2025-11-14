@@ -1,0 +1,104 @@
+/* src/components/Header.css */
+
+.app-header {
+    background-color: #ffffff;
+    /* Nền trắng */
+    padding: 0.8rem 1rem;
+    /* Giảm padding dọc một chút */
+    border-bottom: 1px solid #eee;
+    /* Đường kẻ mờ hơn */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    /* Thêm bóng đổ nhẹ */
+    position: sticky;
+    /* Giữ header cố định khi cuộn (tùy chọn) */
+    top: 0;
+    z-index: 10;
+    /* Đảm bảo header nằm trên các phần tử khác */
+}
+
+.header-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    /* Giữ nguyên giới hạn chiều rộng */
+    margin: 0 auto;
+    /* Căn giữa */
+}
+
+.brand-link {
+    font-weight: bold;
+    text-decoration: none;
+    color: #A98B6C;
+    /* Màu vàng gold đậm cho tên thương hiệu */
+    font-size: 1.5rem;
+    /* Tăng kích thước logo/tên */
+    font-family: serif;
+    /* Dùng font serif cho tên thương hiệu */
+    transition: color 0.2s ease;
+}
+
+.brand-link:hover {
+    color: #8a7057;
+    /* Màu đậm hơn khi hover */
+}
+
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    /* Tăng khoảng cách giữa các link */
+}
+
+.nav-links a,
+.nav-links button.nav-link {
+    /* Áp dụng cho cả Link và Button */
+    text-decoration: none;
+    color: #333;
+    /* Màu chữ tối */
+    font-size: 0.95rem;
+    /* Kích thước chữ cho link */
+    font-weight: 500;
+    /* Hơi đậm */
+    padding-bottom: 5px;
+    /* Thêm padding dưới để tạo khoảng trống cho border */
+    border-bottom: 2px solid transparent;
+    /* Border ẩn ban đầu */
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links button.nav-link:hover {
+    color: #BFA180;
+    /* Màu vàng nhạt khi hover */
+    border-bottom-color: #BFA180;
+    /* Hiển thị border vàng khi hover */
+}
+
+/* Kiểu riêng cho nút Đăng xuất để giống Link */
+.logout-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    /* Bỏ padding mặc định của button */
+    padding-bottom: 5px;
+    /* Thêm padding dưới */
+    margin: 0;
+    /* Reset margin */
+    /* color, font-size, font-weight kế thừa từ .nav-links a */
+    /* border-bottom kế thừa từ .nav-links a */
+}
+
+/* Bỏ focus outline mặc định của button */
+.logout-button:focus {
+    outline: none;
+}
+
+.admin-link {
+    color: #dc3545 !important;
+    /* Màu đỏ */
+    font-weight: bold !important;
+    border-bottom-color: #dc3545 !important;
+}

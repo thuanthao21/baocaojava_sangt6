@@ -1,0 +1,357 @@
+/* --- Layout tổng thể --- */
+.product-detail-page {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+  padding: 1rem;
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+/* Bố cục 2 cột cho màn hình lớn hơn */
+@media (min-width: 768px) {
+  .product-detail-page {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+/* --- Hình ảnh sản phẩm --- */
+.product-detail-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-detail-image {
+  max-width: 100%;
+  height: auto;
+  max-height: 550px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.product-detail-image:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Thông tin sản phẩm --- */
+.product-detail-info {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+/* Tên sản phẩm */
+.product-detail-name {
+  font-family: "Playfair Display", serif;
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #2c2c2c;
+  letter-spacing: 0.5px;
+  text-transform: capitalize;
+}
+
+/* Giá sản phẩm */
+.product-detail-price {
+  font-size: 1.8rem;
+  color: #b48a55;
+  /* vàng đồng sang trọng */
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+}
+
+/* Danh mục */
+.product-detail-category {
+  margin-bottom: 1rem;
+  color: #777;
+  font-style: italic;
+}
+
+/* Mô tả sản phẩm */
+.product-detail-description {
+  margin-bottom: 1.8rem;
+  line-height: 1.8;
+  color: #444;
+  font-size: 1.05rem;
+}
+
+.product-detail-description h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.3rem;
+  color: #333;
+}
+
+/* --- Bộ chọn số lượng --- */
+.quantity-selector {
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.quantity-selector label {
+  font-weight: 500;
+  color: #333;
+}
+
+.quantity-input {
+  width: 70px;
+  padding: 0.6rem;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.quantity-input:focus {
+  border-color: #b48a55;
+  outline: none;
+}
+
+/* --- Nút thêm vào giỏ hàng --- */
+.add-to-cart-button {
+  background: linear-gradient(135deg, #b48a55, #d4af37);
+  color: white;
+  border: none;
+  padding: 0.9rem 1.8rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+  margin-bottom: 2rem;
+}
+
+.add-to-cart-button:hover {
+  background: linear-gradient(135deg, #d4af37, #b48a55);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(180, 138, 85, 0.3);
+}
+
+/* --- Thông báo thêm giỏ hàng --- */
+.added-message {
+  color: #198754;
+  margin-top: 12px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  animation: fadeOut 3s forwards;
+}
+
+@keyframes fadeOut {
+
+  0%,
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+/* --- Khu vực Đánh giá Sản phẩm --- */
+.product-reviews-section {
+  border-top: 1px solid #e0e0e0;
+  padding-top: 2.5rem;
+  margin-top: 3rem;
+  font-family: "Inter", sans-serif;
+  background: #faf9f8;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Tiêu đề chính */
+.product-reviews-section h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #2c2c2c;
+  position: relative;
+  text-align: left;
+}
+
+.product-reviews-section h3::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #b48a55, #d4af37);
+  margin-top: 0.4rem;
+  border-radius: 2px;
+}
+
+/* --- Form gửi đánh giá --- */
+.review-form {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.review-form:hover {
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.08);
+}
+
+.review-form h4 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+/* Nhóm input */
+.review-form .form-group {
+  margin-bottom: 1rem;
+}
+
+.review-form label {
+  display: block;
+  font-weight: 500;
+  color: #444;
+  margin-bottom: 0.4rem;
+}
+
+/* Rating */
+.rating-group select {
+  width: 120px;
+  padding: 0.4rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.rating-group select:focus {
+  border-color: #b48a55;
+  outline: none;
+}
+
+/* Bình luận */
+.review-form textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 0.8rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  resize: vertical;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-form textarea:focus {
+  border-color: #b48a55;
+  box-shadow: 0 0 0 2px rgba(180, 138, 85, 0.15);
+  outline: none;
+}
+
+/* Nút gửi đánh giá */
+.review-form button {
+  background: linear-gradient(135deg, #b48a55, #d4af37);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.8rem 1.8rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.review-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(180, 138, 85, 0.3);
+  background: linear-gradient(135deg, #d4af37, #b48a55);
+}
+
+/* --- Gợi ý đăng nhập --- */
+.login-prompt {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+.login-prompt a {
+  color: #b48a55;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.login-prompt a:hover {
+  border-color: #b48a55;
+}
+
+/* --- Danh sách đánh giá --- */
+.review-list {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Mỗi đánh giá */
+.review-item {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 1.2rem 1.5rem;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.review-item:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+/* Điểm đánh giá */
+.review-rating {
+  font-size: 1.2rem;
+  color: #d4af37;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+/* Bình luận */
+.review-comment {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+/* Thông tin người đánh giá */
+.review-meta {
+  font-size: 0.9rem;
+  color: #777;
+  font-style: italic;
+}
+
+/* Loading + lỗi */
+.review-list p {
+  color: #555;
+}
+
+.error-message {
+  color: #dc3545;
+  font-weight: 500;
+  text-align: center;
+}

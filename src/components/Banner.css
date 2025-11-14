@@ -1,0 +1,51 @@
+/* src/components/Banner.css */
+.banner-container {
+    width: 100%;
+    /* Chiếm hết chiều rộng */
+    margin-bottom: 2rem;
+    /* Khoảng cách với phần dưới */
+    position: relative;
+    /* Để chứa nội dung tuyệt đối nếu cần */
+    border-radius: 8px;
+    /* Bo góc nhẹ */
+    overflow: hidden;
+    /* Đảm bảo ảnh không tràn viền */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.banner-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    /* Vẫn giữ giới hạn chiều cao tối đa */
+    /* Thay đổi giá trị này */
+    object-fit: contain;
+    /* <-- SỬA TỪ 'cover' THÀNH 'contain' */
+    /* contain: Scale ảnh xuống để vừa khung mà không cắt, giữ tỷ lệ */
+    /* Có thể thêm background color cho container nếu ảnh không chiếm hết */
+    /* background-color: #f0f0f0; */
+}
+
+/* Tùy chọn: Style cho nội dung chữ/nút trên banner */
+.banner-content {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    /* Hoặc căn giữa */
+    transform: translateY(-50%);
+    color: white;
+    /* Hoặc màu phù hợp với ảnh nền */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.banner-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.banner-content button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    /* Thêm style nút */
+}

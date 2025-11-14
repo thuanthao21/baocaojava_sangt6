@@ -1,0 +1,95 @@
+/* src/components/admin/Modal.css */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 600px;
+    /* Độ rộng của modal */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    max-height: 90vh;
+    /* Chiều cao tối đa, cho phép cuộn */
+    overflow-y: auto;
+    /* Thêm thanh cuộn nếu nội dung dài */
+}
+
+.modal-content h3 {
+    margin-top: 0;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    color: #343a40;
+}
+
+.product-form .form-group {
+    margin-bottom: 15px;
+}
+
+.product-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #495057;
+}
+
+/* Style chung cho input, select, textarea */
+.product-form input[type="text"],
+.product-form input[type="number"],
+.product-form input[type="url"],
+.product-form select,
+.product-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+    /* Quan trọng để padding không làm vỡ layout */
+    font-size: 1rem;
+}
+
+/* Style cho 2 cột (Giá và Số lượng) */
+.form-group-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-group-row .half-width {
+    flex: 1;
+    /* Chia đều 2 cột */
+}
+
+/* Style cho các nút bấm trong Modal */
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    /* Đẩy nút về bên phải */
+    gap: 10px;
+    margin-top: 25px;
+    border-top: 1px solid #e9ecef;
+    padding-top: 15px;
+}
+
+/* Style cho thông báo lỗi (nếu có) */
+.error-message {
+    color: #dc3545;
+    background-color: #f8d7da;
+    border: 1px solid #f5c2c7;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}

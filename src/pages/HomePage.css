@@ -1,0 +1,262 @@
+/* src/pages/HomePage.css */
+
+/* --- Kiểu chung --- */
+.home-page h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.4rem;
+  color: #b48a55;
+  /* vàng đồng sang trọng */
+  font-family: "Playfair Display", serif;
+  /* font chữ sang trọng, thanh lịch */
+  letter-spacing: 1px;
+  /* giãn nhẹ giữa các chữ */
+  text-transform: uppercase;
+  /* in hoa để tạo cảm giác đẳng cấp */
+  font-weight: 600;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  /* tạo chiều sâu nhẹ */
+}
+
+.loading-message,
+.error-message {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1.1rem;
+}
+
+.error-message {
+  color: #dc3545;
+}
+
+/* --- CSS MỚI CHO MENU DANH MỤC --- */
+.category-menu-container {
+  width: 100%;
+  background-color: #ffffff;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.category-menu-bar {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.category-menu-item {
+  position: relative;
+  /* Để định vị submenu */
+}
+
+/* Nút bấm cấp 1 */
+.category-menu-link {
+  display: block;
+  padding: 1rem 1.2rem;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s, background-color 0.2s;
+  white-space: nowrap;
+  font-family: serif;
+  border-bottom: 2px solid transparent;
+}
+
+.category-menu-link:hover,
+.category-menu-item:hover>.category-menu-link {
+  color: #BFA180;
+  /* Màu vàng khi hover */
+  background-color: #fdfdfd;
+}
+
+.category-menu-link.active {
+  color: #BFA180;
+  font-weight: bold;
+  border-bottom-color: #BFA180;
+}
+
+/* Submenu (Danh sách con - cấp 2) */
+.category-submenu {
+  display: none;
+  /* ẨN MẶC ĐỊNH */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
+  border: 1px solid #eee;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 0 0 8px 8px;
+  padding: 0.5rem 0;
+  list-style: none;
+  min-width: 220px;
+  z-index: 10;
+}
+
+/* KHI RÊ CHUỘT VÀO MỤC CHA -> HIỂN THỊ SUBMENU */
+.category-menu-item:hover .category-submenu {
+  display: block;
+}
+
+/* Nút bấm cấp 2 */
+.submenu-item button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0.7rem 1.2rem;
+  font-size: 0.95rem;
+  color: #333;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+
+.submenu-item button:hover,
+.submenu-item button.active {
+  background-color: #f5f5f5;
+  color: #BFA180;
+}
+
+/* ----------------------------------------------- */
+
+/* --- Thanh Công cụ (Toolbar) --- */
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #eee;
+  gap: 1.5rem;
+}
+
+.search-bar {
+  display: flex;
+  flex-grow: 1;
+  max-width: 450px;
+}
+
+.search-input {
+  flex-grow: 1;
+  padding: 0.7rem 1rem;
+  border: 1px solid #ccc;
+  border-right: none;
+  border-radius: 20px 0 0 20px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: #BFA180;
+  box-shadow: 0 0 0 2px rgba(191, 161, 128, 0.2);
+}
+
+.search-button {
+  padding: 0.7rem 1.2rem;
+  border: 1px solid #BFA180;
+  background-color: #BFA180;
+  color: white;
+  border-radius: 0 20px 20px 0;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s;
+}
+
+.search-button:hover {
+  background-color: #A98B6C;
+  border-color: #A98B6C;
+}
+
+.sort-options {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sort-options label {
+  font-size: 0.9rem;
+  color: #555;
+  white-space: nowrap;
+}
+
+.sort-select {
+  padding: 0.7rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  background-color: #fff;
+  font-size: 0.9rem;
+  cursor: pointer;
+  outline: none;
+}
+
+.sort-select:focus {
+  border-color: #BFA180;
+  box-shadow: 0 0 0 2px rgba(191, 161, 128, 0.2);
+}
+
+/* --- Danh sách Sản phẩm --- */
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 5rem 1.5rem;
+  /* Khoảng cách dọc 5rem, ngang 1.5rem */
+  margin-bottom: 2rem;
+}
+
+/* --- Phân trang --- */
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.pagination-button {
+  padding: 0.5rem 0.8rem;
+  min-width: 35px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.pagination-button:hover:not(:disabled) {
+  background-color: #eee;
+  border-color: #ccc;
+}
+
+.pagination-button.active {
+  background-color: #BFA180;
+  color: white;
+  border-color: #BFA180;
+  cursor: default;
+}
+
+.pagination-button:disabled {
+  color: #aaa;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.pagination-ellipsis {
+  padding: 0 0.5rem;
+  color: #888;
+}
+
+.pagination-button.prev-next {
+  color: #333;
+}

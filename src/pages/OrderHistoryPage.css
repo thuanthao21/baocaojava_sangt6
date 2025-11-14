@@ -1,0 +1,149 @@
+/* src/pages/OrderHistoryPage.css */
+.order-history-page h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.order-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+}
+
+.order-summary-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.order-summary-header {
+    background-color: #f8f9fa;
+    padding: 0.75rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.order-summary-header span {
+    white-space: nowrap;
+}
+
+.order-status {
+    font-weight: bold;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.8em;
+}
+
+/* --- [CẬP NHẬT] Màu sắc cho các trạng thái --- */
+
+/* PENDING (Chờ xử lý) */
+.status-pending {
+    background-color: #ffc107;
+    /* Vàng */
+    color: #333;
+    /* Chữ đen cho dễ đọc */
+}
+
+/* SHIPPED (Đang giao) */
+.status-shipped {
+    background-color: #0d6efd;
+    /* Xanh dương */
+}
+
+/* DELIVERED (Đã giao) */
+.status-delivered {
+    background-color: #198754;
+    /* Xanh lá */
+}
+
+/* CANCELLED (Đã hủy) */
+.status-cancelled {
+    background-color: #dc3545;
+    /* Đỏ */
+}
+
+/* --- Kết thúc cập nhật --- */
+
+
+.order-summary-details {
+    padding: 1rem;
+}
+
+.order-summary-details h4 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: #333;
+}
+
+.order-summary-details ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem 0;
+}
+
+.order-summary-details li {
+    margin-bottom: 0.3rem;
+    font-size: 0.9em;
+    color: #444;
+}
+
+.order-summary-details li a {
+    color: #0d6efd;
+    text-decoration: none;
+}
+
+.order-summary-details li a:hover {
+    text-decoration: underline;
+}
+
+.order-summary-details p {
+    font-size: 0.9em;
+    color: #444;
+    margin-top: 0.5rem;
+}
+
+.loading-message,
+.error-message {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1.1rem;
+}
+
+.error-message {
+    color: #dc3545;
+}
+
+.order-card-actions {
+    padding: 0 1rem 1rem 1rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cancel-order-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.cancel-order-button:hover {
+    background-color: #c82333;
+}

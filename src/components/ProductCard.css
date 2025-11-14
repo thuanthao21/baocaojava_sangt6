@@ -1,0 +1,97 @@
+/* src/components/ProductCard.css */
+.product-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
+}
+
+.product-card {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  /* Thêm border-color vào transition */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  /* Cho nút wishlist */
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  /* [GEMINI_VN]: Thêm viền vàng khi hover */
+  border-color: #BFA180;
+}
+
+.product-card-image {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  margin-bottom: 0.75rem;
+  border-radius: 4px;
+}
+
+.product-card-name {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: #333;
+  /* Màu tên sản phẩm */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 2.5em;
+  flex-grow: 1;
+  /* Đẩy giá xuống dưới */
+}
+
+.product-card-price {
+  /* [GEMINI_VN]: Đổi màu giá sang màu vàng đậm hơn */
+  color: #A98B6C;
+  /* Thay màu đỏ bằng màu vàng đậm */
+  font-weight: bold;
+  margin-top: auto;
+}
+
+/* --- Kiểu nút Wishlist (giữ nguyên hoặc chỉnh màu nếu muốn) --- */
+.wishlist-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.7);
+  transition: color 0.2s, background-color 0.2s;
+  color: #ccc;
+  /* Màu tim mặc định (xám) */
+}
+
+.wishlist-button svg {
+  display: block;
+}
+
+.wishlist-button:hover {
+  /* [GEMINI_VN]: Có thể đổi màu hover sang vàng nhạt */
+  background-color: rgba(191, 161, 128, 0.1);
+}
+
+.wishlist-button.active {
+  color: #BFA180;
+  /* [GEMINI_VN]: Đổi màu tim active sang vàng */
+}
+
+.wishlist-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}

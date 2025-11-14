@@ -1,0 +1,120 @@
+/* src/pages/AuthForm.css */
+.auth-form-container {
+  max-width: 400px;
+  margin: 2rem auto;
+  /* Căn giữa form */
+  padding: 2rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.auth-form-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.auth-form .form-group {
+  margin-bottom: 1rem;
+}
+
+.auth-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #555;
+}
+
+.auth-form input[type="text"],
+.auth-form input[type="password"],
+.auth-form input[type="email"] {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  /* Quan trọng để padding không làm tăng kích thước */
+  font-size: 1rem;
+}
+
+.auth-form button {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #0d6efd;
+  /* Màu nút chính */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 1rem;
+}
+
+.auth-form button:hover {
+  background-color: #0b5ed7;
+}
+
+.auth-form button:disabled {
+  background-color: #6c757d;
+  /* Màu xám khi bị disable */
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: #dc3545;
+  /* Màu đỏ cho lỗi */
+  margin-top: 1rem;
+  text-align: center;
+  white-space: pre-wrap;
+  /* Cho phép xuống dòng trong thẻ <pre> */
+}
+
+.switch-auth-link {
+  margin-top: 1.5rem;
+  text-align: center;
+  color: #555;
+}
+
+.switch-auth-link a {
+  color: #0d6efd;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.switch-auth-link a:hover {
+  text-decoration: underline;
+}
+
+.success-message {
+  color: #198754;
+  /* Màu xanh lá */
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-weight: bold;
+  white-space: pre-wrap;
+  background-color: #d1e7dd;
+  /* Nền xanh nhạt */
+  border: 1px solid #badbcc;
+  border-radius: 4px;
+  padding: 0.75rem;
+}
+
+/* Cập nhật error-message để giống success */
+.error-message {
+  color: #dc3545;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-weight: bold;
+  white-space: pre-wrap;
+  background-color: #f8d7da;
+  /* Nền đỏ nhạt */
+  border: 1px solid #f5c2c7;
+  border-radius: 4px;
+  padding: 0.75rem;
+}
